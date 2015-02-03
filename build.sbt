@@ -4,7 +4,7 @@ organization := "ORG"
 
 version := "0.0.1"
 
-scalaVersion := "2.11.2"
+scalaVersion := "2.11.5"
 
 // Resolvers
 resolvers ++= Seq(
@@ -29,13 +29,16 @@ scalacOptions ++= Seq(
   "-Ywarn-dead-code",
   "-Ywarn-numeric-widen",
   "-Ywarn-value-discard",
+  "-Ywarn-unused-import",
   "-Xfuture",
   "-Yno-imports"
 )
 
 // Compile Dependencies
 libraryDependencies ++= Seq(
-  "org.scalaz" %% "scalaz-core" % "7.1.0"
+  "org.scalaz" %% "scalaz-core" % "7.1.0",
+
+  "org.scalacheck" %% "scalacheck" % "1.12.1" % "test"
 )
 
 // Wartremover
