@@ -4,13 +4,12 @@ organization := "ORG"
 
 version := "0.0.1"
 
-scalaVersion := "2.11.5"
+scalaVersion := "2.11.7"
 
 // Resolvers
 resolvers ++= Seq(
   Resolver.sonatypeRepo("releases"),
-  "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases",
-  "bintray/non" at "http://dl.bintray.com/non/maven"
+  "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
 )
 
 // Compile options
@@ -36,13 +35,13 @@ scalacOptions ++= Seq(
 
 // Compile Dependencies
 libraryDependencies ++= Seq(
-  "org.scalaz" %% "scalaz-core" % "7.1.0",
+  "org.scalaz" %% "scalaz-core" % "7.1.3",
 
-  "org.scalacheck" %% "scalacheck" % "1.12.1" % "test"
+  "org.scalacheck" %% "scalacheck" % "1.12.5" % "test"
 )
 
 // Wartremover
-wartremoverErrors ++= Warts.all
+wartremoverErrors ++= Warts.unsafe
 
 // Kind Projector
-addCompilerPlugin("org.spire-math" % "kind-projector_2.11" % "0.5.2")
+addCompilerPlugin("org.spire-math" % "kind-projector" % "0.6.3")
