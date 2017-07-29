@@ -34,7 +34,7 @@ lazy val commonSettings = Seq(
   // Licensing
   organizationName := "ORG NAME",
   startYear := Some(2017),
-  licenses += (("Apache 2", url("http://www.apache.org/licenses/LICENSE-2.0"))),
+  licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0")),
 
   // Resolvers
   resolvers ++= Seq(
@@ -70,11 +70,12 @@ lazy val commonSettings = Seq(
   ),
 
   // Kind Projector
-  addCompilerPlugin("org.spire-math" % "kind-projector" % "0.9.4")
+  addCompilerPlugin("org.spire-math" % "kind-projector" % "0.9.4" cross CrossVersion.binary)
 )
 
 lazy val root = project.in(file("."))
   .settings(commonSettings)
+  .settings(name := "NAME")
   .aggregate(core)
 
 lazy val core = project.in(file("core"))
